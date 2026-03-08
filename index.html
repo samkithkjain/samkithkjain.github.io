@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samkith K Jain</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">SKJ</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/experience.html">Experience</a></li>
+      <li><a href="pages/education.html">Education</a></li>
+      <li><a href="pages/publications.html">Publications</a></li>
+      <li><a href="pages/awards.html">Awards</a></li>
+      <li><a href="pages/recommendations.html">Recommendations</a></li>
+      <li><a href="pages/contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Hello, I'm</p>
+      <h1 class="hero-name">Samkith<br /><em>K Jain</em></h1>
+      <!-- tagline and badges removed for a cleaner look -->
+      <div class="hero-actions">
+        <a href="pages/about.html" class="btn-primary">Find out more about me</a>
+      </div>
+    </div>
+    <div class="scroll-wrapper">
+      <div class="hero-scroll-hint">scroll</div>
+    </div>
+  </section>
+
+  <!-- QUICK NAV CARDS -->
+  <section id="quick-nav">
+    <div class="container">
+      <p class="section-label">Navigate</p>
+      <div class="qnav-grid">
+
+        <a href="pages/about.html" class="qnav-card">
+          <div class="qnav-num">01</div>
+          <h3>About</h3>
+          <p>Background, skills & links</p>
+          <span class="qnav-arrow">→</span>
+        </a>
+
+        <a href="pages/experience.html" class="qnav-card">
+          <div class="qnav-num">02</div>
+          <h3>Experience</h3>
+          <p>Work & research history</p>
+          <span class="qnav-arrow">→</span>
+        </a>
+
+        <a href="pages/education.html" class="qnav-card">
+          <div class="qnav-num">03</div>
+          <h3>Education</h3>
+          <p>Academic journey</p>
+          <span class="qnav-arrow">→</span>
+        </a>
+
+        <a href="pages/publications.html" class="qnav-card">
+          <div class="qnav-num">04</div>
+          <h3>Publications</h3>
+          <p>Papers & conferences</p>
+          <span class="qnav-arrow">→</span>
+        </a>
+
+        <a href="pages/awards.html" class="qnav-card">
+          <div class="qnav-num">05</div>
+          <h3>Awards</h3>
+          <p>Recognitions & scholarships</p>
+          <span class="qnav-arrow">→</span>
+        </a>
+
+        <a href="pages/recommendations.html" class="qnav-card qnav-card--accent">
+          <div class="qnav-num">06</div>
+          <h3>Recommendations</h3>
+          <p>LinkedIn testimonials</p>
+          <span class="qnav-arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Samkith K Jain</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+  <script>
+    const scrollHint = document.querySelector(".scroll-wrapper");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 40) {
+        scrollHint.classList.add("hidden");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recommendations — Samkith K Jain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/recommendations.css" />
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.png" />
+</head>
+<body>
+
+  <nav id="navbar" class="solid">
+    <a href="../index.html" class="nav-logo">SKJ</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="awards.html">Awards</a></li>
+      <li><a href="recommendations.html" class="active">Recommendations</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label">06 / Testimonials</p>
+      <h1>LinkedIn <em>Recommendations</em></h1>
+      <p>Kind words from colleagues, mentors, and collaborators I've had the privilege of working with.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="rec-section">
+      <div class="container">
+
+        <!-- ═══════════ RECOMMENDATION CARDS ═══════════ -->
+        <div class="rec-grid">
+
+          <!--
+            HOW TO USE EACH CARD:
+            1. Copy a .rec-card block
+            2. Set data-src to your image path, e.g.: ../assets/recommendations/rec-jane-doe.png
+            3. Fill in name, title/relationship, and date
+            4. Add a short quote excerpt (optional) from the recommendation text
+          -->
+
+          <!-- ═══ REC 1 ═══ -->
+          <div class="rec-card reveal" data-index="0"
+               data-src="../assets/recommendations/rec-01.png"
+               data-name="Neerja Mhaskar"
+               data-title="Assistant Professor · McMaster University"
+               data-caption="July 2025">
+            <div class="rec-img-wrap">
+              <img
+                src="../assets/recommendations/rec-01.png"
+                alt="LinkedIn recommendation from Neerja Mhaskar"
+                loading="lazy"
+                onerror="this.closest('.rec-img-wrap').classList.add('img-missing')"
+              />
+              <div class="rec-img-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9l4-4 4 4 4-6 6 8"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                </svg>
+                <span>rec-01.png</span>
+              </div>
+              <div class="rec-overlay">
+                <span class="rec-zoom">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    <path d="M11 8v6M8 11h6"/>
+                  </svg>
+                  View full
+                </span>
+              </div>
+            </div>
+            <div class="rec-meta">
+              <div class="rec-avatar"><!-- initials filled by JS --></div>
+              <div class="rec-info">
+                <p class="rec-name">Dr. Neerja Mhaskar</p>
+                <p class="rec-role">Assistant Professor · McMaster University</p>
+              </div>
+              <span class="rec-date">July 2025</span>
+            </div>
+          </div>
+
+          <!-- ═══ REC 2 ═══ -->
+          <div class="rec-card reveal" data-index="1"
+               data-src="../assets/recommendations/rec-02.png"
+               data-name="Abhishek Sharma"
+               data-title="Principal Software Engineer · NI (National Instruments) now Emerson"
+               data-caption="May 2023">
+            <div class="rec-img-wrap">
+              <img
+                src="../assets/recommendations/rec-02.png"
+                alt="LinkedIn recommendation from Abhishek Sharma"
+                loading="lazy"
+                onerror="this.closest('.rec-img-wrap').classList.add('img-missing')"
+              />
+              <div class="rec-img-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9l4-4 4 4 4-6 6 8"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                </svg>
+                <span>rec-02.png</span>
+              </div>
+              <div class="rec-overlay">
+                <span class="rec-zoom">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    <path d="M11 8v6M8 11h6"/>
+                  </svg>
+                  View full
+                </span>
+              </div>
+            </div>
+            <div class="rec-meta">
+              <div class="rec-avatar"></div>
+              <div class="rec-info">
+                <p class="rec-name">Abhishek Sharma</p>
+                <p class="rec-role">Principal Software Engineer · NI (National Instruments) now Emerson</p>
+              </div>
+              <span class="rec-date">May 2023</span>
+            </div>
+          </div>
+
+          <!-- ═══ REC 3 ═══ -->
+          <div class="rec-card reveal" data-index="2"
+               data-src="../assets/recommendations/rec-03.png"
+               data-name="Dr Girija Jagannath"
+               data-title="Professor · Department of Computer Science & Engineering Bangalore Institute of Technology"
+               data-caption="February 2023">
+            <div class="rec-img-wrap">
+              <img
+                src="../assets/recommendations/rec-03.png"
+                alt="LinkedIn recommendation from Dr Girija Jagannath"
+                loading="lazy"
+                onerror="this.closest('.rec-img-wrap').classList.add('img-missing')"
+              />
+              <div class="rec-img-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9l4-4 4 4 4-6 6 8"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                </svg>
+                <span>rec-03.png</span>
+              </div>
+              <div class="rec-overlay">
+                <span class="rec-zoom">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    <path d="M11 8v6M8 11h6"/>
+                  </svg>
+                  View full
+                </span>
+              </div>
+            </div>
+            <div class="rec-meta">
+              <div class="rec-avatar"></div>
+              <div class="rec-info">
+                <p class="rec-name">Dr. Girija Jagannath</p>
+                <p class="rec-role">Professor · Department of Computer Science & Engineering Bangalore Institute of Technology</p>
+              </div>
+              <span class="rec-date">February 2023</span>
+            </div>
+          </div>
+
+          <!-- ═══ REC 4 ═══ -->
+          <div class="rec-card reveal" data-index="3"
+               data-src="../assets/recommendations/rec-04.png"
+               data-name="Varun Mehra"
+               data-title="Experienced software engineer"
+               data-caption="October 2022">
+            <div class="rec-img-wrap">
+              <img
+                src="../assets/recommendations/rec-04.png"
+                alt="LinkedIn recommendation from Varun Mehra"
+                loading="lazy"
+                onerror="this.closest('.rec-img-wrap').classList.add('img-missing')"
+              />
+              <div class="rec-img-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9l4-4 4 4 4-6 6 8"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                </svg>
+                <span>rec-04.png</span>
+              </div>
+              <div class="rec-overlay">
+                <span class="rec-zoom">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    <path d="M11 8v6M8 11h6"/>
+                  </svg>
+                  View full
+                </span>
+              </div>
+            </div>
+            <div class="rec-meta">
+              <div class="rec-avatar"></div>
+              <div class="rec-info">
+                <p class="rec-name">Varun Mehra</p>
+                <p class="rec-role">Experienced software engineer</p>
+              </div>
+              <span class="rec-date">October 2022</span>
+            </div>
+          </div>
+
+          <!-- Duplicate a .rec-card block above for each additional recommendation -->
+
+        </div><!-- /.rec-grid -->
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ LIGHTBOX ═══ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Recommendation image viewer">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img id="lbImg" src="" alt="" />
+      <div class="lightbox-caption" id="lbCaption"></div>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+    <div class="lightbox-backdrop" id="lbBackdrop"></div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Samkith K Jain</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/recommendations.js"></script>
+</body>
+</html>
