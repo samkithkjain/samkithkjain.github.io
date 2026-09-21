@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samkith K Jain</title>
+  <meta name="description" content="Samkith K Jain is a software engineer and computer science researcher working across algorithms, distributed systems, and AI." />
+  <meta property="og:title" content="Samkith K Jain" />
+  <meta property="og:description" content="Software engineer and computer science researcher working across algorithms, distributed systems, and AI." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
   <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
@@ -13,8 +18,8 @@
   <!-- NAV -->
   <nav id="navbar">
     <a href="index.html" class="nav-logo">SKJ</a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
       <li><a href="pages/about.html">About</a></li>
       <li><a href="pages/experience.html">Experience</a></li>
       <li><a href="pages/education.html">Education</a></li>
@@ -23,7 +28,7 @@
       <li><a href="pages/recommendations.html">Recommendations</a></li>
       <li><a href="pages/contact.html" class="nav-cta">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
   </nav>
