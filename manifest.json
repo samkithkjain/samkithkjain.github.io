@@ -1,0 +1,17 @@
+{
+  "name": "Samkith K Jain",
+  "short_name": "Samkith Jain",
+  "description": "Portfolio of Samkith K Jain, software engineer and computer science researcher.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f0a832",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
