@@ -1,5 +1,5 @@
 /* ======= ABOUT PAGE ======= */
-.about-section { padding: 72px 0 100px; }
+.about-section { padding: 88px 0 100px; }
 .about-grid {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -59,6 +59,7 @@
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
 @media (max-width: 768px) {
+  .about-section { padding-top: 56px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-photo-frame { max-width: 220px; }
 }

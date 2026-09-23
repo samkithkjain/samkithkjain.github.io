@@ -1,6 +1,6 @@
 /* ======= RECOMMENDATIONS PAGE ======= */
 
-.rec-section { padding: 64px 0 100px; }
+.rec-section { padding: 88px 0 100px; }
 
 /* Add guide banner */
 .add-guide {
@@ -30,6 +30,10 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .rec-section { padding-top: 56px; }
 }
 
 /* CARD */
