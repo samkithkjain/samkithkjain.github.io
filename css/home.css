@@ -10,8 +10,8 @@
 .grid-overlay {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(240,168,50,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(240,168,50,.04) 1px, transparent 1px);
+    linear-gradient(rgba(178,58,58,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(178,58,58,.04) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
 }
@@ -19,8 +19,8 @@
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 65% 40%, rgba(61,214,200,.06) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(240,168,50,.06) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 65% 40%, rgba(8,122,114,.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(178,58,58,.06) 0%, transparent 60%);
 }
 .hero-content {
   position: relative; z-index: 1;
@@ -113,11 +113,11 @@
   background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 60%);
   opacity: 0; transition: opacity .3s;
 }
-.qnav-card:hover { border-color: rgba(240,168,50,.3); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.3); }
+.qnav-card:hover { border-color: rgba(178,58,58,.3); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.3); }
 .qnav-card:hover::before { opacity: 1; }
-.qnav-card--accent { border-color: rgba(61,214,200,.2); }
+.qnav-card--accent { border-color: rgba(8,122,114,.2); }
 .qnav-card--accent::before { background: linear-gradient(135deg, var(--teal-soft) 0%, transparent 60%); }
-.qnav-card--accent:hover { border-color: rgba(61,214,200,.4); }
+.qnav-card--accent:hover { border-color: rgba(8,122,114,.4); }
 .qnav-num {
   font-family: var(--font-mono);
   font-size: .68rem; letter-spacing: .15em;
