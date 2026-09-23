@@ -477,3 +477,9 @@ footer p { font-family: var(--font-mono); font-size: .7rem; color: var(--text-di
   .pub-number { display: none; }
   .footer-inner { flex-direction: column; gap: 10px; }
 }
+
+div.page-hero + main#main-content > section:first-child { padding-top: 88px; }
+
+@media (max-width: 768px) {
+  div.page-hero + main#main-content > section:first-child { padding-top: 56px; }
+}
