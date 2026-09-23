@@ -62,7 +62,7 @@
           -->
 
           <!-- ═══ REC 1 ═══ -->
-          <div class="rec-card reveal" data-index="0"
+          <div class="rec-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View recommendation from Neerja Mhaskar" data-index="0"
                data-src="../assets/recommendations/rec-01.png"
                data-name="Neerja Mhaskar"
                data-title="Assistant Professor · McMaster University"
@@ -103,7 +103,7 @@
           </div>
 
           <!-- ═══ REC 2 ═══ -->
-          <div class="rec-card reveal" data-index="1"
+          <div class="rec-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View recommendation from Abhishek Sharma" data-index="1"
                data-src="../assets/recommendations/rec-02.png"
                data-name="Abhishek Sharma"
                data-title="Principal Software Engineer · NI (National Instruments) now Emerson"
@@ -144,7 +144,7 @@
           </div>
 
           <!-- ═══ REC 3 ═══ -->
-          <div class="rec-card reveal" data-index="2"
+          <div class="rec-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View recommendation from Dr Girija Jagannath" data-index="2"
                data-src="../assets/recommendations/rec-03.png"
                data-name="Dr Girija Jagannath"
                data-title="Professor · Department of Computer Science & Engineering Bangalore Institute of Technology"
@@ -185,7 +185,7 @@
           </div>
 
           <!-- ═══ REC 4 ═══ -->
-          <div class="rec-card reveal" data-index="3"
+          <div class="rec-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="lightbox" aria-label="View recommendation from Varun Mehra" data-index="3"
                data-src="../assets/recommendations/rec-04.png"
                data-name="Varun Mehra"
                data-title="Experienced software engineer"
@@ -234,13 +234,13 @@
   </main>
 
   <!-- ═══ LIGHTBOX ═══ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Recommendation image viewer">
-    <button class="lightbox-close" id="lbClose" aria-label="Close">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbCaption" aria-hidden="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Close recommendation viewer">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M18 6L6 18M6 6l12 12"/>
       </svg>
     </button>
-    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous recommendation">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M15 18l-6-6 6-6"/>
       </svg>
@@ -249,7 +249,7 @@
       <img id="lbImg" src="" alt="" />
       <div class="lightbox-caption" id="lbCaption"></div>
     </div>
-    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next recommendation">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M9 18l6-6-6-6"/>
       </svg>

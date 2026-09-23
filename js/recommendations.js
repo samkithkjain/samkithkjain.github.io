@@ -27,6 +27,7 @@ const lbBackdrop = document.getElementById('lbBackdrop');
 // Collect all cards that have a real image src
 const cards = Array.from(document.querySelectorAll('.rec-card'));
 let current  = 0;
+let lastFocusedElement = null;
 
 function openLightbox(index) {
   current = index;
@@ -44,13 +45,17 @@ function openLightbox(index) {
   lbNext.disabled = index === cards.length - 1;
 
   lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  lbClose.focus();
 }
 
 function closeLightbox() {
   lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   setTimeout(() => { lbImg.src = ''; }, 300);
+  if (lastFocusedElement) lastFocusedElement.focus();
 }
 
 function navigate(dir) {
@@ -60,7 +65,17 @@ function navigate(dir) {
 
 // Open on card click
 cards.forEach((card, i) => {
-  card.addEventListener('click', () => openLightbox(i));
+  const activate = () => {
+    lastFocusedElement = card;
+    openLightbox(i);
+  };
+  card.addEventListener('click', activate);
+  card.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      activate();
+    }
+  });
 });
 
 // Controls
@@ -72,9 +87,24 @@ lbNext.addEventListener('click', (e) => { e.stopPropagation(); navigate(+1); });
 // Keyboard
 document.addEventListener('keydown', (e) => {
   if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape')      closeLightbox();
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    closeLightbox();
+  }
   if (e.key === 'ArrowLeft')   navigate(-1);
   if (e.key === 'ArrowRight')  navigate(+1);
+  if (e.key === 'Tab') {
+    const focusable = [lbClose, lbPrev, lbNext].filter(control => !control.disabled);
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
 });
 
 // Touch swipe support
