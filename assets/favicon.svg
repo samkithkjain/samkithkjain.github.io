@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
   <title>Samkith K Jain</title>
-  <rect width="64" height="64" rx="8" fill="#b23a3a"/>
+  <circle cx="32" cy="32" r="32" fill="#b23a3a"/>
   <path d="M44 18c-3.5-2.7-7.5-4-12-4-8.5 0-14 4.5-14 11 0 5.5 4 8.5 12 10.5l4 1c7.5 2 12 4.5 12 10 0 6-5.5 10.5-14 10.5-5.5 0-10-1.5-14-4.5" transform="translate(0 -3.5)" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
