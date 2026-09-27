@@ -59,7 +59,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.timeline-item, .award-card, .reveal, .pub-item').forEach(el => {
+document.querySelectorAll('.timeline-item, .award-card, .reveal, .pub-item, .featured-card, .editorial-quote-card').forEach(el => {
   revealObserver.observe(el);
 });
 
@@ -68,13 +68,20 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const pubItems   = document.querySelectorAll('.pub-item');
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
+    filterBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
     btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
     const filter = btn.dataset.filter;
     pubItems.forEach(item => {
       const show = filter === 'all' || item.dataset.type === filter;
       item.classList.toggle('hidden', !show);
-      if (show) item.style.animation = 'fadeUp .4s forwards';
+      if (show) {
+        item.classList.add('visible');
+        item.style.animation = 'fadeUp .4s forwards';
+      }
     });
   });
 });
