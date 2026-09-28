@@ -4,8 +4,8 @@
   "description": "Portfolio of Samkith K Jain, software engineer and computer science researcher.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#fdfbf7",
-  "theme_color": "#a82e2e",
+  "background_color": "#fdfaf7",
+  "theme_color": "#881337",
   "icons": [
     {
       "src": "assets/favicon.svg",

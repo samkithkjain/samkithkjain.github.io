@@ -6,21 +6,21 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
 :root {
-  --bg: #fdfbf7;
-  --bg-2: #f4efe6;
-  --bg-3: #eae3d5;
+  --bg: #fdfaf7;
+  --bg-2: #f5efe8;
+  --bg-3: #ece3da;
   --surface: #ffffff;
-  --surface-2: #f8f5ee;
-  --border: #e5ded3;
-  --border-light: #ede8df;
-  --text: #18181b;
-  --text-muted: #52525b;
-  --text-dim: #71717a;
-  --accent: #a82e2e;
-  --accent-2: #842323;
-  --accent-soft: rgba(168, 46, 46, 0.08);
-  --teal: #0d6e67;
-  --teal-soft: rgba(13, 110, 103, 0.08);
+  --surface-2: #faf6f0;
+  --border: #e7e5e4;
+  --border-light: #f0edea;
+  --text: #1c1917;
+  --text-muted: #57534e;
+  --text-dim: #78716c;
+  --accent: #881337;
+  --accent-2: #6b0f2b;
+  --accent-soft: rgba(136, 19, 55, 0.08);
+  --teal: #0e7490;
+  --teal-soft: rgba(14, 116, 144, 0.08);
   --radius: 10px;
   --radius-sm: 6px;
   --radius-lg: 16px;
@@ -29,9 +29,9 @@
   --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --nav-h: 68px;
   --max-w: 1120px;
-  --shadow-sm: 0 1px 3px rgba(24, 24, 27, 0.04);
-  --shadow-md: 0 6px 20px rgba(24, 24, 27, 0.06);
-  --shadow-lg: 0 16px 36px rgba(24, 24, 27, 0.08);
+  --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 6px 20px rgba(28, 25, 23, 0.06);
+  --shadow-lg: 0 16px 36px rgba(28, 25, 23, 0.08);
 }
 
 /* RESET */
@@ -147,10 +147,10 @@ img {
 
 #navbar.scrolled,
 #navbar.solid {
-  background: rgba(253, 251, 247, 0.92);
+  background: rgba(253, 250, 247, 0.94);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(24, 24, 27, 0.03);
+  box-shadow: 0 4px 20px rgba(28, 25, 23, 0.03);
 }
 
 .nav-logo {
@@ -652,6 +652,33 @@ img {
   margin-bottom: 12px;
 }
 
+.pub-schematic {
+  width: 100%;
+  max-width: 540px;
+  height: 64px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0 14px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.pub-item:hover .pub-schematic {
+  border-color: rgba(136, 19, 55, 0.25);
+  background: #ffffff;
+}
+
+.pub-schematic svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .pub-links {
   display: flex;
   gap: 10px;
@@ -681,7 +708,7 @@ img {
   color: #ffffff;
   border-color: var(--accent);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(168, 46, 46, 0.2);
+  box-shadow: 0 4px 12px rgba(136, 19, 55, 0.2);
 }
 
 .pub-link:active {
@@ -918,12 +945,12 @@ footer p {
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: rgba(253, 251, 247, 0.98);
+    background: rgba(253, 250, 247, 0.98);
     backdrop-filter: blur(16px);
     padding: 20px 28px;
     border-bottom: 1px solid var(--border);
     gap: 2px;
-    box-shadow: 0 12px 30px rgba(24, 24, 27, 0.08);
+    box-shadow: 0 12px 30px rgba(28, 25, 23, 0.08);
   }
 
   .nav-links.open a {
