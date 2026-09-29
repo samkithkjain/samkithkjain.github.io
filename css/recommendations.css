@@ -244,29 +244,46 @@
 
 .lightbox-close {
   position: absolute;
-  z-index: 3;
-  top: 18px;
-  right: 22px;
-  width: 42px;
-  height: 42px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
+  z-index: 10;
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text);
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s, color 0.2s, transform 0.2s, border-color 0.2s;
 }
 
 .lightbox-close:hover {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
+  transform: scale(1.06);
+}
+
+.lightbox-close:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
 }
 
 .lightbox-close svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+

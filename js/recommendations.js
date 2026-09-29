@@ -38,7 +38,7 @@ function openLightbox(card) {
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
-  lbClose.focus();
+  lbClose.focus({ preventScroll: true });
 }
 
 function closeLightbox() {
@@ -46,7 +46,7 @@ function closeLightbox() {
   lightbox.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   setTimeout(() => { lbImg.src = ''; }, 300);
-  if (lastFocusedElement) lastFocusedElement.focus();
+  if (lastFocusedElement) lastFocusedElement.focus({ preventScroll: true });
 }
 
 // Open on card click
