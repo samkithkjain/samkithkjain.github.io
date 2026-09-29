@@ -58,8 +58,49 @@
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
-@media (max-width: 768px) {
-  .about-section { padding-top: 56px; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-photo-frame { max-width: 220px; }
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+  }
 }
+
+@media (max-width: 768px) {
+  .about-section {
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .about-photo-frame {
+    max-width: 220px;
+    margin: 0 auto 24px;
+  }
+  .sidebar-info {
+    max-width: 460px;
+    margin: 0 auto 20px;
+  }
+  .about-links {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 440px) {
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    padding: 8px 0;
+  }
+  .info-value {
+    text-align: left;
+    font-size: 0.82rem;
+  }
+  .skill-tags {
+    gap: 6px;
+  }
+}
+

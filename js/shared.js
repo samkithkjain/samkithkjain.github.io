@@ -25,6 +25,7 @@ const navLinks  = document.querySelector('.nav-links');
 if (hamburger && navLinks) {
   const setMenuOpen = (isOpen) => {
     navLinks.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     const spans = hamburger.querySelectorAll('span');
     hamburger.setAttribute('aria-expanded', String(isOpen));
     spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px, 5.5px)' : '';
@@ -42,6 +43,11 @@ if (hamburger && navLinks) {
   });
   document.addEventListener('click', event => {
     if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 960 && navLinks.classList.contains('open')) {
       setMenuOpen(false);
     }
   });
