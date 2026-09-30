@@ -924,6 +924,21 @@ footer p {
   }
 }
 
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeInPage 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1233,4 +1248,36 @@ div.page-hero+main#main-content>section:first-child {
   .publications-section {
     padding-bottom: 56px;
   }
+}
+
+/* =================== BACK TO TOP =================== */
+.back-to-top {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(136, 19, 55, 0.2);
+  transform: translateY(-50%);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  z-index: 10;
+}
+
+.back-to-top:hover {
+  background: var(--accent-2);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 6px 16px rgba(136, 19, 55, 0.3);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
 }

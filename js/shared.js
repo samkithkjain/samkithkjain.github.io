@@ -91,3 +91,21 @@ filterBtns.forEach(btn => {
     });
   });
 });
+
+// ---- Back to Top Button ----
+const backToTop = document.createElement('button');
+backToTop.className = 'back-to-top';
+backToTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+backToTop.setAttribute('aria-label', 'Back to top');
+
+const footer = document.querySelector('footer');
+if (footer) {
+  footer.style.position = 'relative'; // Ensure absolute positioning works
+  footer.appendChild(backToTop);
+} else {
+  document.body.appendChild(backToTop);
+}
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
