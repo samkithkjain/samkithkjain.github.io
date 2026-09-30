@@ -43,13 +43,13 @@
 
 .math-canvas {
   position: fixed;
-  top: var(--nav-h);
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: calc(100vh - var(--nav-h));
-  height: calc(100dvh - var(--nav-h));
+  height: 100vh;
+  height: 100dvh;
   display: block;
   pointer-events: none;
   z-index: 0;

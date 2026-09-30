@@ -160,29 +160,23 @@
       this.offsetX *= 0.92;
       this.offsetY *= 0.92;
 
-      // Center protection: softly repel particles away from central hero text when visible
+      // Center legibility: softly reduce particle alpha directly behind the name for maximum legibility without splitting particles apart
       let alphaMult = 1.0;
-      const heroContent = document.querySelector('.hero-content');
+      const nameEl = document.querySelector('.hero-name') || document.querySelector('.hero-content');
 
-      if (heroContent) {
-        const hRect = heroContent.getBoundingClientRect();
-        const hTop = hRect.top - navH;
-        const hBottom = hRect.bottom - navH;
-
-        if (hBottom > 0 && hTop < height) {
-          const centerX = hRect.left + hRect.width / 2;
-          const centerY = hTop + hRect.height / 2;
+      if (nameEl) {
+        const nRect = nameEl.getBoundingClientRect();
+        if (nRect.bottom > 0 && nRect.top < height) {
+          const centerX = nRect.left + nRect.width / 2;
+          const centerY = nRect.top + nRect.height / 2;
           const cdx = (this.x + this.offsetX) - centerX;
           const cdy = (this.y + this.offsetY) - centerY;
-          const textRadiusX = Math.min(260, width * 0.35);
-          const textRadiusY = 120;
-          const normalizedDistSq = (cdx * cdx) / (textRadiusX * textRadiusX) + (cdy * cdy) / (textRadiusY * textRadiusY);
+          const rx = Math.max(160, nRect.width * 0.52);
+          const ry = Math.max(65, nRect.height * 0.52);
+          const distSq = (cdx * cdx) / (rx * rx) + (cdy * cdy) / (ry * ry);
 
-          if (normalizedDistSq < 1.0) {
-            const repulsion = (1.0 - normalizedDistSq) * 0.8;
-            this.x += (cdx >= 0 ? 1 : -1) * repulsion;
-            this.y += (cdy >= 0 ? 1 : -1) * repulsion * 0.6;
-            alphaMult = Math.max(0.32, normalizedDistSq * normalizedDistSq);
+          if (distSq < 1.0) {
+            alphaMult = 0.28 + 0.72 * Math.sqrt(distSq);
           }
         }
       }
@@ -217,7 +211,12 @@
 
       ctx.save();
       const { r, g, b } = this.color;
-      const alpha = Math.min(0.85, Math.max(0.10, this.currentAlpha));
+      let alpha = Math.min(0.85, Math.max(0.10, this.currentAlpha));
+
+      // Softly fade out particles as they approach the top bar
+      if (renderY < navH + 18) {
+        alpha *= Math.max(0, (renderY - 8) / (navH + 10));
+      }
 
       if (this.isNode) {
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
@@ -248,19 +247,16 @@
     }
   }
 
-  // ---- Draw Subtle Word-Free Background Reticle Centered on Hero ----
+  // ---- Draw Subtle Word-Free Background Reticle Centered on Name ----
   function drawReticle() {
-    const heroEl = document.getElementById('hero');
-    if (!heroEl) return;
+    const nameEl = document.querySelector('.hero-name') || document.querySelector('.hero-content');
+    if (!nameEl) return;
 
-    const hRect = heroEl.getBoundingClientRect();
-    const hTop = hRect.top - navH;
+    const nRect = nameEl.getBoundingClientRect();
+    if (nRect.bottom < 0 || nRect.top > height) return;
 
-    // Only draw reticle if hero is in or near viewport
-    if (hRect.bottom < 0 || hTop > height) return;
-
-    const cx = hRect.left + hRect.width / 2 + (mouse.active ? (mouse.x - width / 2) * 0.025 : 0);
-    const cy = hTop + hRect.height * 0.48 + (mouse.active ? (mouse.y - height / 2) * 0.025 : 0);
+    const cx = nRect.left + nRect.width / 2 + (mouse.active ? (mouse.x - width / 2) * 0.02 : 0);
+    const cy = nRect.top + nRect.height / 2 + (mouse.active ? (mouse.y - height / 2) * 0.02 : 0);
 
     ctx.save();
     ctx.translate(cx, cy);
@@ -409,11 +405,11 @@
     ctx.restore();
   }
 
-  // ---- Canvas Resize & Particle Density (Full Page Below Navbar) ----
+  // ---- Canvas Resize & Particle Density (Full Page) ----
   function resize() {
     navH = getNavbarHeight();
     width = window.innerWidth;
-    height = Math.max(200, window.innerHeight - navH);
+    height = window.innerHeight;
     dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     canvas.width = Math.floor(width * dpr);
@@ -486,7 +482,7 @@
     }
 
     mouse.targetX = clientX;
-    mouse.targetY = clientY - navH; // map to canvas space
+    mouse.targetY = clientY;
     mouse.active = true;
 
     if (mouse.x < -100) {
@@ -511,7 +507,7 @@
     if (clientY < navH) return; // ignore clicks on top bar
 
     const rx = e.clientX;
-    const ry = clientY - navH;
+    const ry = clientY;
 
     ripples.push({
       x: rx,
