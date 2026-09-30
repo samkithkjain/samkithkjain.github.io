@@ -43,10 +43,6 @@
     margin-bottom: -6px;
   }
 
-  .rec-action-row {
-    padding-top: 14px;
-  }
-
   .rec-proof-btn {
     font-size: 0.7rem;
     padding: 6px 12px;
@@ -90,7 +86,6 @@
   justify-content: space-between;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  cursor: pointer;
   position: relative;
   opacity: 0;
   transform: translateY(18px);
@@ -189,14 +184,12 @@
   margin-bottom: -10px;
 }
 
-/* Proof Action Row */
-.rec-action-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 18px;
-  border-top: 1px solid var(--border-light);
-  gap: 12px;
+.rec-top-link {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 5px 10px;
+  gap: 5px;
+  text-decoration: none;
 }
 
 .rec-proof-btn {
@@ -213,7 +206,8 @@
   transition: all 0.2s;
 }
 
-.rec-card:hover .rec-proof-btn {
+.rec-proof-btn:hover,
+.rec-proof-btn:focus-visible {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
@@ -222,133 +216,5 @@
 .rec-proof-btn svg {
   width: 14px;
   height: 14px;
-}
-
-/* =================== LIGHTBOX =================== */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-}
-
-.lightbox.open {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.lightbox-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(24, 24, 27, 0.85);
-  backdrop-filter: blur(12px);
-}
-
-.lightbox-content {
-  position: relative;
-  z-index: 2;
-  max-width: min(94vw, 860px);
-  max-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  transform: scale(0.96);
-  transition: transform 0.3s;
-}
-
-.lightbox.open .lightbox-content {
-  transform: scale(1);
-}
-
-.lightbox-content img {
-  max-width: 100%;
-  max-height: 72vh;
-  border-radius: var(--radius);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-  display: block;
-  object-fit: contain;
-  background: #fff;
-}
-
-.lightbox-caption {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  color: #f4efe6;
-  text-align: center;
-  letter-spacing: 0.04em;
-  padding: 0 16px;
-  line-height: 1.45;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.lightbox-close {
-  position: absolute;
-  z-index: 10;
-  top: 24px;
-  right: 28px;
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  transition: background 0.2s, color 0.2s, transform 0.2s, border-color 0.2s;
-}
-
-.lightbox-close:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-
-.lightbox-close:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 3px;
-}
-
-.lightbox-close svg {
-  width: 18px;
-  height: 18px;
-}
-
-@media (max-width: 640px) {
-  .lightbox-close {
-    top: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .lightbox {
-    padding: 16px;
-  }
-
-  .lightbox-content img {
-    max-height: 75vh;
-    width: 100%;
-    object-fit: contain;
-  }
 }
 
