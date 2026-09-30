@@ -321,7 +321,6 @@
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
-  transform: scale(1.06);
 }
 
 .lightbox-close:focus-visible {
