@@ -383,6 +383,19 @@ body.home-page footer {
     padding: calc(var(--nav-h) + 12px) 16px 50px;
   }
 
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 10px;
+  }
+
+  .hero-scroll-hint {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+@media (max-width: 640px) {
   .hero-status {
     border-radius: var(--radius-lg);
     padding: 10px 16px;
@@ -404,17 +417,6 @@ body.home-page footer {
     display: flex;
     flex-direction: column;
     gap: 3px;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    margin-bottom: 10px;
-  }
-
-  .hero-scroll-hint {
-    font-size: 0.58rem;
-    letter-spacing: 0.22em;
   }
 }
 
