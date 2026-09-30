@@ -27,11 +27,14 @@
   <meta name="apple-mobile-web-app-title" content="Samkith K Jain" />
 </head>
 
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
+  <!-- LIVE FULL-PAGE BACKGROUND CANVAS -->
+  <canvas id="math-canvas" class="math-canvas" aria-hidden="true"></canvas>
+
   <!-- NAV -->
-  <nav id="navbar" aria-label="Primary navigation">
+  <nav id="navbar" class="solid" aria-label="Primary navigation">
     <a href="index.html" class="nav-logo">SKJ</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html" class="active" aria-current="page">Home</a></li>
@@ -53,49 +56,6 @@
     <section id="hero">
       <div class="hero-bg">
         <div class="grid-overlay"></div>
-        <div class="hero-schematic" aria-hidden="true">
-          <svg viewBox="0 0 880 620" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Grid Axes & Registration -->
-            <line x1="60" y1="310" x2="820" y2="310" stroke="var(--border)" stroke-width="0.75" stroke-dasharray="3 4"/>
-            <line x1="440" y1="40" x2="440" y2="580" stroke="var(--border)" stroke-width="0.75" stroke-dasharray="3 4"/>
-            <line x1="190" y1="160" x2="690" y2="460" stroke="var(--border)" stroke-width="0.6" stroke-dasharray="2 4"/>
-            <line x1="190" y1="460" x2="690" y2="160" stroke="var(--border)" stroke-width="0.6" stroke-dasharray="2 4"/>
-            
-            <!-- Corner Crosses -->
-            <path d="M60 55v10M55 60h10 M820 55v10M815 60h10 M60 555v10M55 560h10 M820 555v10M815 560h10" stroke="var(--border)" stroke-width="0.8"/>
-            
-            <!-- Concentric Coordinate Rings -->
-            <circle cx="440" cy="310" r="260" stroke="var(--border)" stroke-width="0.75" stroke-dasharray="4 4"/>
-            <circle cx="440" cy="310" r="210" stroke="var(--border)" stroke-width="0.85"/>
-            <circle cx="440" cy="310" r="150" stroke="var(--accent)" stroke-width="1" opacity="0.45"/>
-            <circle cx="440" cy="310" r="90" stroke="var(--teal)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
-            <circle cx="440" cy="310" r="35" stroke="var(--accent)" stroke-width="1.2" opacity="0.7"/>
-            
-            <!-- Center Diamond Reticle -->
-            <polygon points="440,278 472,310 440,342 408,310" stroke="var(--accent)" stroke-width="1" fill="var(--accent-soft)"/>
-            <circle cx="440" cy="310" r="2.5" fill="var(--accent)"/>
-
-            <!-- Peripheral Orbiting Nodes -->
-            <circle cx="230" cy="310" r="3.5" fill="var(--accent)" opacity="0.8"/>
-            <circle cx="650" cy="310" r="3.5" fill="var(--accent)" opacity="0.8"/>
-            <circle cx="440" cy="100" r="3" fill="var(--teal)"/>
-            <circle cx="440" cy="520" r="3" fill="var(--teal)"/>
-            <circle cx="291" cy="161" r="2.5" fill="var(--accent)" opacity="0.6"/>
-            <circle cx="589" cy="459" r="2.5" fill="var(--teal)" opacity="0.7"/>
-            <circle cx="589" cy="161" r="2" fill="var(--text-dim)"/>
-            <circle cx="291" cy="459" r="2" fill="var(--text-dim)"/>
-
-            <!-- Curvature Arc Tangents -->
-            <path d="M180 310 C 180 180, 310 100, 440 100" stroke="var(--teal)" stroke-width="0.75" opacity="0.5"/>
-            <path d="M700 310 C 700 440, 570 520, 440 520" stroke="var(--accent)" stroke-width="0.75" opacity="0.4"/>
-
-            <!-- Technical Coordinate Annotations -->
-            <text x="75" y="70" font-family="var(--font-mono)" font-size="8.5" fill="var(--text-dim)" letter-spacing="0.16em">SYS·ALGO [43.26°N·79.92°W]</text>
-            <text x="690" y="70" font-family="var(--font-mono)" font-size="8.5" fill="var(--text-dim)" letter-spacing="0.16em">TOCS·SPIRE·ACM</text>
-            <text x="75" y="555" font-family="var(--font-mono)" font-size="8.5" fill="var(--text-dim)" letter-spacing="0.16em">STRINGOLOGY·C++</text>
-            <text x="705" y="555" font-family="var(--font-mono)" font-size="8.5" fill="var(--text-dim)" letter-spacing="0.16em">DISTRIBUTED·DAG</text>
-          </svg>
-        </div>
       </div>
       <div class="hero-content">
         <div class="hero-status">
@@ -328,6 +288,7 @@
   </footer>
 
   <script src="js/shared.js"></script>
+  <script src="js/math-bg.js"></script>
   <script>
     const scrollHint = document.querySelector(".scroll-wrapper");
     if (scrollHint) {

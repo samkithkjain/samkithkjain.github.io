@@ -41,24 +41,18 @@
     radial-gradient(ellipse 40% 40% at 20% 80%, rgba(136, 19, 55, 0.06) 0%, transparent 60%);
 }
 
-.hero-schematic {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(880px, 94vw);
-  height: min(620px, 78vh);
+.math-canvas {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
+  display: block;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.42;
-  mask-image: radial-gradient(ellipse 65% 58% at 50% 50%, black 20%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse 65% 58% at 50% 50%, black 20%, transparent 85%);
-}
-
-.hero-schematic svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 .hero-content {
@@ -190,7 +184,18 @@
 
 /* ======= QUICK NAV ======= */
 #quick-nav {
+  position: relative;
+  z-index: 1;
+  background: transparent;
   padding: 88px 0 110px;
+}
+
+body.home-page footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(253, 250, 247, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .qnav-grid {
@@ -406,9 +411,5 @@
 
   .scroll-wrapper {
     display: none;
-  }
-
-  .hero-schematic {
-    opacity: 0.2;
   }
 }
