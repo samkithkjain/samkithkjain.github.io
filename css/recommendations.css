@@ -340,5 +340,15 @@
     width: 40px;
     height: 40px;
   }
+
+  .lightbox {
+    padding: 16px;
+  }
+
+  .lightbox-content img {
+    max-height: 75vh;
+    width: 100%;
+    object-fit: contain;
+  }
 }
 
