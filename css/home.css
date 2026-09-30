@@ -384,11 +384,26 @@ body.home-page footer {
   }
 
   .hero-status {
-    border-radius: var(--radius);
-    padding: 6px 12px;
-    font-size: 0.68rem;
+    border-radius: var(--radius-lg);
+    padding: 10px 16px;
+    font-size: 0.72rem;
     text-align: left;
     line-height: 1.4;
+    align-items: flex-start;
+  }
+
+  .status-dot {
+    margin-top: 6px;
+  }
+
+  .status-sep {
+    display: none;
+  }
+
+  .status-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
 
   .hero-eyebrow {

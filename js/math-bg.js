@@ -414,8 +414,8 @@
 
     canvas.width = Math.floor(width * dpr);
     canvas.height = Math.floor(height * dpr);
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
+    // Rely on CSS (100vw / 100dvh) for the actual layout dimensions
+    // to prevent jarring layout shifts on mobile.
 
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
@@ -530,7 +530,16 @@
 
   // ---- Window Resize ----
   let resizeTimeout;
+  let lastWidth = window.innerWidth;
+  
   window.addEventListener('resize', () => {
+    // On mobile devices, vertical scrolling hides the address bar and fires a resize event.
+    // We ignore vertical-only resizes on small screens to prevent jarring particle resets.
+    if (window.innerWidth <= 768 && window.innerWidth === lastWidth) {
+      return;
+    }
+    lastWidth = window.innerWidth;
+    
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(resize, 80);
   });
