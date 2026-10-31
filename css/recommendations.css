@@ -44,8 +44,9 @@
   }
 
   .rec-proof-btn {
-    font-size: 0.7rem;
-    padding: 6px 12px;
+    font-size: 0.72rem;
+    padding: 7px 13px;
+    gap: 7px;
   }
 }
 
@@ -186,35 +187,45 @@
 
 .rec-top-link {
   align-self: flex-start;
-  margin-top: 4px;
-  padding: 5px 10px;
-  gap: 5px;
+  margin-top: 6px;
   text-decoration: none;
 }
 
 .rec-proof-btn {
   font-family: var(--font-mono);
-  font-size: 0.73rem;
-  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #ffffff;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--accent-soft);
-  border: 1px solid rgba(136, 19, 55, 0.2);
-  padding: 6px 14px;
+  gap: 8px;
+  background: #0a66c2;
+  border: 1px solid #0a66c2;
+  padding: 8px 16px;
   border-radius: var(--radius-sm);
-  transition: all 0.2s;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(10, 102, 194, 0.2);
 }
 
-.rec-proof-btn:hover,
+.rec-proof-btn:hover {
+  background: #004182;
+  border-color: #004182;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.32);
+}
+
 .rec-proof-btn:focus-visible {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
+  background: #004182;
+  border-color: #004182;
+  color: #ffffff;
+  outline: 3px solid #0a66c2;
+  outline-offset: 3px;
 }
 
 .rec-proof-btn svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
