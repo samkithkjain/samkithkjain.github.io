@@ -569,29 +569,8 @@
     particles.forEach(p => p.draw());
     drawGraphEdges();
   } else {
-    const heroEl = document.getElementById('hero');
-    if (heroEl) {
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          if (!isRunning && !document.hidden) {
-            isRunning = true;
-            lastTime = performance.now();
-            animationId = requestAnimationFrame(animate);
-          }
-        } else {
-          isRunning = false;
-          if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
-          }
-        }
-      }, { rootMargin: '100px' });
-      observer.observe(heroEl);
-    } else {
-      // Fallback if no #hero exists
-      isRunning = true;
-      lastTime = performance.now();
-      animationId = requestAnimationFrame(animate);
-    }
+    isRunning = true;
+    lastTime = performance.now();
+    animationId = requestAnimationFrame(animate);
   }
 })();

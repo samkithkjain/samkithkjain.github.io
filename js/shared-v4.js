@@ -76,10 +76,10 @@ filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => {
       b.classList.remove('active');
-      b.setAttribute('aria-selected', 'false');
+      b.setAttribute('aria-pressed', 'false');
     });
     btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
+    btn.setAttribute('aria-pressed', 'true');
     const filter = btn.dataset.filter;
     pubItems.forEach(item => {
       const show = filter === 'all' || item.dataset.type === filter;
@@ -95,7 +95,7 @@ filterBtns.forEach(btn => {
 // ---- Back to Top Button ----
 const backToTop = document.createElement('button');
 backToTop.className = 'back-to-top';
-backToTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+backToTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
 backToTop.setAttribute('aria-label', 'Back to top');
 
 const footerInner = document.querySelector('.footer-inner');
@@ -106,6 +106,14 @@ if (footerInner) {
 } else {
   document.body.appendChild(backToTop);
 }
+
+const updateBackToTopVisibility = () => {
+  const isScrollable = document.documentElement.scrollHeight > window.innerHeight + 100;
+  backToTop.classList.toggle('hidden', !isScrollable);
+};
+
+updateBackToTopVisibility();
+window.addEventListener('resize', updateBackToTopVisibility);
 
 backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });

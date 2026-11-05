@@ -16,11 +16,20 @@
     property="og:description" />
   <meta content="Samkith K Jain" property="og:site_name" />
   <meta content="website" property="og:type" />
+  <meta content="https://samkithkjain.github.io/pages/publications.html" property="og:url" />
+  <meta content="https://samkithkjain.github.io/assets/images/profile.jpeg" property="og:image" />
   <meta content="summary" name="twitter:card" />
   <meta content="Publications &amp; Research — Samkith K Jain" name="twitter:title" />
   <meta
     content="Peer-reviewed papers, conference proceedings, master's thesis, and technical systems notes in stringology and C++ systems."
     name="twitter:description" />
+  <meta content="https://samkithkjain.github.io/assets/images/profile.jpeg" name="twitter:image" />
+  <link href="https://samkithkjain.github.io/pages/publications.html" rel="canonical" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
   <link href="../css/style.css" rel="stylesheet" />
   <link href="../assets/favicon.svg" rel="icon" type="image/svg+xml" />
   <link href="../manifest.json" rel="manifest" />
@@ -28,20 +37,20 @@
   <meta content="yes" name="mobile-web-app-capable" />
   <meta content="yes" name="apple-mobile-web-app-capable" />
   <meta content="Samkith K Jain" name="apple-mobile-web-app-title" />
-  <meta content="https://samkithkjain.github.io/images/og-image.png" property="og:image" />
   <script type="application/ld+json">
-                {
-                  "@context": "https://schema.org",
-                  "@type": "Person",
-                  "name": "Samkith K Jain",
-                  "url": "https://samkithkjain.github.io",
-                  "jobTitle": "Software Engineer",
-                  "sameAs": [
-                    "https://www.linkedin.com/in/samkith-jain/",
-                    "https://github.com/samkithkjain"
-                  ]
-                }
-                </script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Samkith K Jain",
+    "url": "https://samkithkjain.github.io",
+    "jobTitle": "Software Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/samkithkjain",
+      "https://github.com/samkithkjain",
+      "https://orcid.org/0009-0008-5300-6875"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -73,12 +82,19 @@
   <main id="main-content">
     <section class="content-section publications-section">
       <div class="container">
+        <div aria-label="Filter publications by category" class="pub-filter" role="group">
+          <button aria-pressed="true" class="filter-btn active" data-filter="all" type="button">All</button>
+          <button aria-pressed="false" class="filter-btn" data-filter="journal" type="button">Journal</button>
+          <button aria-pressed="false" class="filter-btn" data-filter="conference" type="button">Conference</button>
+          <button aria-pressed="false" class="filter-btn" data-filter="thesis" type="button">Thesis</button>
+          <button aria-pressed="false" class="filter-btn" data-filter="technical" type="button">Technical</button>
+        </div>
         <div class="pub-list">
           <!-- 01: JOURNAL -->
           <article class="pub-item visible" data-date="2026-09-05" data-index="0" data-type="journal">
             <div class="pub-number">01</div>
             <div class="pub-brand springer">
-              <img alt="Springer Nature Logo" class="pub-logo" loading="lazy" src="../assets/images/SN_stack_logo_white.svg" />
+              <img alt="Springer Nature Logo" class="pub-logo" height="42" loading="lazy" src="../assets/images/SN_stack_logo_white.svg" width="42" />
             </div>
             <div class="pub-body">
               <span class="pub-type-badge journal">Journal</span>
@@ -102,13 +118,13 @@
             </div>
           </article>
           <!-- 02: THESIS -->
-          <article class="pub-item visible" data-date="2025-12-15" data-index="1" data-type="workshop">
+          <article class="pub-item visible" data-date="2025-12-15" data-index="1" data-type="thesis">
             <div class="pub-number">02</div>
             <div class="pub-brand">
-              <img alt="McMaster University Logo" class="pub-logo" loading="lazy" src="../assets/images/mcmaster-logo.png" />
+              <img alt="McMaster University Logo" class="pub-logo" height="42" loading="lazy" src="../assets/images/mcmaster-logo.png" width="42" />
             </div>
             <div class="pub-body">
-              <span class="pub-type-badge workshop">Thesis</span>
+              <span class="pub-type-badge thesis">Thesis</span>
               <h3 class="pub-title">MSc Thesis – Closed Strings</h3>
               <p class="pub-authors"><strong>Samkith K Jain</strong> · Advised by Dr. Neerja Mhaskar</p>
               <p class="pub-venue">McMaster University · Department of Computing &amp; Software · Dec 15, 2025</p>
@@ -129,7 +145,7 @@
           <article class="pub-item visible" data-date="2025-09-22" data-index="2" data-type="conference">
             <div class="pub-number">03</div>
             <div class="pub-brand springer">
-              <img alt="Springer Nature Logo" class="pub-logo" loading="lazy" src="../assets/images/SN_stack_logo_white.svg" />
+              <img alt="Springer Nature Logo" class="pub-logo" height="42" loading="lazy" src="../assets/images/SN_stack_logo_white.svg" width="42" />
             </div>
             <div class="pub-body">
               <span class="pub-type-badge conference">Conference</span>
@@ -152,30 +168,30 @@
             </div>
           </article>
           <!-- 04: TECHNICAL NOTE 1 -->
-          <article class="pub-item visible" data-date="2023-06-08" data-index="3" data-type="workshop">
+          <article class="pub-item visible" data-date="2023-06-08" data-index="3" data-type="technical">
             <div class="pub-number">04</div>
             <div class="pub-brand">
-              <img alt="National Instruments Logo" class="pub-logo ni-logo" loading="lazy" src="../assets/images/ni-logo.webp" />
+              <img alt="National Instruments Logo" class="pub-logo ni-logo" height="42" loading="lazy" src="../assets/images/ni-logo.webp" width="42" />
             </div>
             <div class="pub-body">
-              <span class="pub-type-badge workshop">Technical</span>
+              <span class="pub-type-badge technical">Technical</span>
               <h3 class="pub-title">C++17 Features for Improvements in RFmx</h3>
               <p class="pub-authors"><strong>Samkith K Jain</strong></p>
               <p class="pub-venue">National Instruments Internal Engineering Publication · Jun 8, 2023</p>
               <p class="card-description">
                 Technical evaluation and architecture guidance on modernizing legacy RF measurement pipelines using
-                C++17 structured bindings, `std::string_view`, `std::optional`, and constexpr optimizations.
+                C++17 structured bindings, <code>std::string_view</code>, <code>std::optional</code>, and constexpr optimizations.
               </p>
             </div>
           </article>
           <!-- 05: TECHNICAL NOTE 2 -->
-          <article class="pub-item visible" data-date="2022-06-08" data-index="4" data-type="workshop">
+          <article class="pub-item visible" data-date="2022-06-08" data-index="4" data-type="technical">
             <div class="pub-number">05</div>
             <div class="pub-brand">
-              <img alt="National Instruments Logo" class="pub-logo ni-logo" loading="lazy" src="../assets/images/ni-logo.webp" />
+              <img alt="National Instruments Logo" class="pub-logo ni-logo" height="42" loading="lazy" src="../assets/images/ni-logo.webp" width="42" />
             </div>
             <div class="pub-body">
-              <span class="pub-type-badge workshop">Technical</span>
+              <span class="pub-type-badge technical">Technical</span>
               <h3 class="pub-title">NIBuild on Dockers</h3>
               <p class="pub-authors"><strong>Samkith K Jain</strong></p>
               <p class="pub-venue">National Instruments Internal Engineering Publication · Jun 8, 2022</p>
@@ -186,13 +202,13 @@
             </div>
           </article>
           <!-- 06: TECHNICAL NOTE 3 -->
-          <article class="pub-item visible" data-date="2022-06-08" data-index="5" data-type="workshop">
+          <article class="pub-item visible" data-date="2022-06-08" data-index="5" data-type="technical">
             <div class="pub-number">06</div>
             <div class="pub-brand">
-              <img alt="National Instruments Logo" class="pub-logo ni-logo" loading="lazy" src="../assets/images/ni-logo.webp" />
+              <img alt="National Instruments Logo" class="pub-logo ni-logo" height="42" loading="lazy" src="../assets/images/ni-logo.webp" width="42" />
             </div>
             <div class="pub-body">
-              <span class="pub-type-badge workshop">Technical</span>
+              <span class="pub-type-badge technical">Technical</span>
               <h3 class="pub-title">Pursuing a Memory Leak on Linux</h3>
               <p class="pub-authors"><strong>Samkith K Jain</strong></p>
               <p class="pub-venue">National Instruments Internal Engineering Publication · Jun 8, 2022</p>
@@ -203,13 +219,13 @@
             </div>
           </article>
           <!-- 07: TECHNICAL NOTE 4 -->
-          <article class="pub-item visible" data-date="2021-10-06" data-index="6" data-type="workshop">
+          <article class="pub-item visible" data-date="2021-10-06" data-index="6" data-type="technical">
             <div class="pub-number">07</div>
             <div class="pub-brand">
-              <img alt="National Instruments Logo" class="pub-logo ni-logo" loading="lazy" src="../assets/images/ni-logo.webp" />
+              <img alt="National Instruments Logo" class="pub-logo ni-logo" height="42" loading="lazy" src="../assets/images/ni-logo.webp" width="42" />
             </div>
             <div class="pub-body">
-              <span class="pub-type-badge workshop">Technical</span>
+              <span class="pub-type-badge technical">Technical</span>
               <h3 class="pub-title">The RF Linux Story</h3>
               <p class="pub-authors"><strong>Samkith K Jain</strong></p>
               <p class="pub-venue">National Instruments Internal Engineering Publication · Oct 6, 2021</p>
@@ -227,12 +243,6 @@
     <div class="container">
       <div class="footer-inner">
         <p>© <span id="year"></span> Samkith K Jain</p>
-        <div class="footer-nav">
-          <a href="../index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="experience.html">Experience</a>
-          <a href="contact.html">Contact</a>
-        </div>
       </div>
     </div>
   </footer>
